@@ -1,0 +1,61 @@
+{
+  "name": "contributte/nella",
+  "description": "Opinionated pre-configured kernel based on Nette (@nette). Suitable for all kind apps.",
+  "keywords": [
+    "nette",
+    "kernel",
+    "stack"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/contributte/nella",
+  "authors": [
+    {
+      "name": "Milan Felix Šulc",
+      "homepage": "https://f3l1x.io"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "contributte/application": "^0.5.0",
+    "contributte/bootstrap": "^0.5.0",
+    "contributte/di": "^0.5.1",
+    "contributte/latte": "^0.5.0",
+    "contributte/tracy": "^0.5.1",
+    "contributte/utils": "^0.5.0",
+    "contributte/forms": "^0.5.0"
+  },
+  "require-dev": {
+    "contributte/qa": "^0.2.0",
+    "contributte/tester": "^0.1.0",
+    "mockery/mockery": "^1.5.0",
+    "phpstan/phpstan": "^1.2.0",
+    "phpstan/phpstan-deprecation-rules": "^1.0.0",
+    "phpstan/phpstan-nette": "^1.0.0",
+    "phpstan/phpstan-strict-rules": "^1.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Contributte\\Nella\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\Fixtures\\": "tests/fixtures",
+      "Tests\\Toolkit\\": "tests/toolkit"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev"
+    }
+  }
+}
