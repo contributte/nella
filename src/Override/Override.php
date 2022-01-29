@@ -30,7 +30,7 @@ class Override
 
 		$dir = dirname((string) $presenter::getReflection()->getFileName());
 
-		$dir = is_dir($dir . '/templates') ? $dir : dirname($dir);
+		$dir = is_dir($dir . '/Templates') ? $dir : dirname($dir);
 		$list = [
 			$dir . '/Templates/' . $presenterName . '/@layout.latte',
 			$dir . '/Templates/' . $presenterName . '.@layout.latte',
