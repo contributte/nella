@@ -3,6 +3,7 @@
   "description": "Opinionated pre-configured kernel based on Nette (@nette). Suitable for all kind apps.",
   "keywords": [
     "nette",
+    "nella",
     "kernel",
     "stack"
   ],
