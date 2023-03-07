@@ -35,64 +35,68 @@ class NellaPreset extends BasePreset
 
 		$configurator->enableTracy($this->bootPoint . '/../var/log');
 
+		// extensions
+		assert(is_array($configurator->onCompile));
 		$configurator->onCompile[] = static function (ExtraConfigurator $configurator, Compiler $compiler): void {
 			$compiler->addExtension('nella', new NellaExtension());
-
-			// nette/application conventions
-			$compiler->addConfig([
-				'application' => [
-					'catchExceptions' => '%productionMode%',
-					'errorPresenter' => 'Nella:Error',
-					'mapping' => [
-						'*' => ['App\UI', '*', '*\*Presenter'],
-						'Nella' => 'Contributte\Nella\UI\*Presenter',
-					],
-				],
-			]);
-
-			// nette/http conventions
-			$compiler->addConfig([
-				'session' => [
-					'debugger' => '%debugMode%',
-					'expiration' => '+14 days',
-					'autoStart' => 'smart',
-				],
-			]);
-
-			// nette/http conventions
-			$compiler->addConfig([
-				'http' => [
-					'headers' => [
-						'X-XSS-Protection' => '1; mode=block',
-						'X-Powered-By' => 'contributte',
-					],
-				],
-			]);
-
-			// nette/routing conventions
-			$compiler->addConfig([
-				'routing' => [
-					'debugger' => '%debugMode%',
-				],
-			]);
-
-			// nette/di conventions
-			$compiler->addConfig([
-				'di' => [
-					'debugger' => '%debugMode%',
-				],
-			]);
-
-			// tracy/tracy conventions
-			$compiler->addConfig([
-				'tracy' => [
-					'strictMode' => true,
-				],
-			]);
 		};
 
+		// nette/application conventions
+		$configurator->addConfig([
+			'application' => [
+				'catchExceptions' => '%productionMode%',
+				'errorPresenter' => 'Nella:Error',
+				'mapping' => [
+					'*' => ['App\UI', '*', '*\*Presenter'],
+					'Nella' => 'Contributte\Nella\UI\*Presenter',
+				],
+			],
+		]);
+
+		// nette/http conventions
+		$configurator->addConfig([
+			'session' => [
+				'debugger' => '%debugMode%',
+				'expiration' => '+14 days',
+				'autoStart' => 'smart',
+			],
+		]);
+
+		// nette/http conventions
+		$configurator->addConfig([
+			'http' => [
+				'headers' => [
+					'X-XSS-Protection' => '1; mode=block',
+					'X-Powered-By' => 'contributte',
+				],
+			],
+		]);
+
+		// nette/routing conventions
+		$configurator->addConfig([
+			'routing' => [
+				'debugger' => '%debugMode%',
+			],
+		]);
+
+		// nette/di conventions
+		$configurator->addConfig([
+			'di' => [
+				'debugger' => '%debugMode%',
+			],
+		]);
+
+		// tracy/tracy conventions
+		$configurator->addConfig([
+			'tracy' => [
+				'strictMode' => true,
+			],
+		]);
+
+		// config.neon
 		$configurator->addConfig($this->bootPoint . '/../config/config.neon');
 
+		// local.neon
 		if (file_exists($this->bootPoint . '/../config/local.neon')) {
 			$configurator->addConfig($this->bootPoint . '/../config/local.neon');
 		}
