@@ -12,7 +12,8 @@ class RouterFactory
 	public function create(): Router
 	{
 		$router = new RouteList();
-		$router[] = new Route('[<module>/]<presenter>/<action>', 'Home:default');
+		// $router[] = new Route('[<module>/]<presenter>/<action>', 'Home:default');
+		$router[] = new Route('<presenter>/<action>', 'Home:default');
 
 		return $router;
 	}
