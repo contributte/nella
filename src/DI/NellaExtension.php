@@ -6,6 +6,7 @@ use Contributte\DI\Extension\CompilerExtension;
 use Contributte\Nella\Override\Override;
 use Contributte\Nella\Routing\RouterFactory;
 use Contributte\Nella\Service\AppFolder;
+use Contributte\Nella\Service\AppParams;
 use Contributte\Nella\Service\Folders;
 use Contributte\Nella\Service\LogFolder;
 use Contributte\Nella\Service\RootFolder;
@@ -49,6 +50,9 @@ class NellaExtension extends CompilerExtension
 
 		$builder->addDefinition($this->prefix('tempFolder'))
 			->setFactory(TempFolder::class, [$builder->parameters['tempDir']]);
+
+		$builder->addDefinition($this->prefix('appParams'))
+			->setFactory(AppParams::class, [$builder->parameters]);
 
 		$builder->addDefinition($this->prefix('override'))
 			->setFactory(Override::class);
