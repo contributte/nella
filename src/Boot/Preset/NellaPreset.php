@@ -41,6 +41,11 @@ class NellaPreset extends BasePreset
 			$compiler->addExtension('nella', new NellaExtension());
 		};
 
+		// environment variables
+		$configurator->onCompile[] = static function (ExtraConfigurator $configurator, Compiler $compiler): void {
+			$compiler->addConfig(['parameters' => $configurator->getEnvironmentParameters()]);
+		};
+
 		// nette/application conventions
 		$configurator->addConfig([
 			'application' => [
