@@ -58,6 +58,29 @@ At this time it's suitable for smaller applications.
     └── index.php
 ```
 
+**Bootstrap**
+
+```php
+<?php declare(strict_types = 1);
+
+namespace App;
+
+use Contributte\Bootstrap\ExtraConfigurator;
+
+final class Bootstrap
+{
+
+	public static function boot(): ExtraConfigurator
+	{
+		return Bootloader::create()
+			->use(NellaPreset::create(__DIR__))
+			->boot();
+	}
+
+}
+
+```
+
 **Presenters**
 
 The presenters in your app can extend `Contributte\Nella\UI\NellaPresenter`.
