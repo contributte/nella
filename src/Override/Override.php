@@ -29,11 +29,11 @@ class Override
 		[$module, $presenterName] = Helpers::splitName((string) $presenter->getName());
 
 		$dir = dirname((string) $presenter::getReflection()->getFileName());
-
 		$dir = is_dir($dir . '/Templates') ? $dir : dirname($dir);
 		$list = [
-			$dir . '/Templates/' . $presenterName . '/@layout.latte',
-			$dir . '/Templates/' . $presenterName . '.@layout.latte',
+			$dir . '/Templates/@layout.latte',
+			$dir . '/' . $presenterName . '.@layout.latte',
+			$dir . '/@layout.latte',
 		];
 
 		do {
