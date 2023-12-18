@@ -36,7 +36,6 @@ class NellaPreset extends BasePreset
 		$configurator->enableTracy($this->bootPoint . '/../var/log');
 
 		// extensions
-		assert(is_array($configurator->onCompile));
 		$configurator->onCompile[] = static function (ExtraConfigurator $configurator, Compiler $compiler): void {
 			$compiler->addExtension('nella', new NellaExtension());
 		};
