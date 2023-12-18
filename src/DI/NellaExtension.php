@@ -14,6 +14,7 @@ use Contributte\Nella\Service\TempFolder;
 use Contributte\Nella\Service\WwwFolder;
 use Nette\DI\Definitions\ServiceDefinition;
 use Nette\DI\Definitions\Statement;
+use Nette\Routing\SimpleRouter;
 
 class NellaExtension extends CompilerExtension
 {
@@ -62,9 +63,18 @@ class NellaExtension extends CompilerExtension
 	{
 		$builder = $this->getContainerBuilder();
 
-		$routerDef = $builder->getDefinition('routing.router');
-		assert($routerDef instanceof ServiceDefinition);
-		$routerDef->setFactory(new Statement($this->prefix('@routerFactory::create')));
+		if ($builder->hasDefinition('routing.router')) {
+			$routerDef = $builder->getDefinition('routing.router');
+			assert($routerDef instanceof ServiceDefinition);
+
+			// Only replace if default SimpleRouter is used
+			if ($routerDef->getCreator()->getEntity() === SimpleRouter::class) {
+				$routerDef->setFactory(new Statement($this->prefix('@routerFactory::create')));
+			}
+		} else {
+			$routerDef = $builder->addDefinition('routing.router');
+			$routerDef->setFactory(new Statement($this->prefix('@routerFactory::create')));
+		}
 	}
 
 }
