@@ -22,7 +22,8 @@ class Override
 	public function getLayoutTemplateFiles(NellaPresenter $presenter): array
 	{
 		$layout = $presenter->getLayout();
-		if (is_string($layout) && preg_match('#/|\\\\#', $layout) !== false) {
+
+		if (is_string($layout) && preg_match('#/|\\\\#', $layout) === true) {
 			return [$layout];
 		}
 
@@ -39,7 +40,7 @@ class Override
 		do {
 			$list[] = dirname($dir) . '/@Templates/@layout.latte';
 			$dir = dirname($dir);
-		} while ($dir !== '' && $module && ([$module] = Helpers::splitName($module)) !== []);
+		} while ($dir !== '' && $module && ([$module] = Helpers::splitName($module)) !== []); // @phpstan-ignore-line
 
 		return $list;
 	}
