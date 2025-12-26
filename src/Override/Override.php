@@ -23,7 +23,7 @@ class Override
 	{
 		$layout = $presenter->getLayout();
 
-		if (is_string($layout) && preg_match('#/|\\\\#', $layout) === true) {
+		if (is_string($layout) && preg_match('#/|\\\\#', $layout) === 1) {
 			return [$layout];
 		}
 

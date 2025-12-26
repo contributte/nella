@@ -17,7 +17,7 @@
     }
   ],
   "require": {
-    "php": ">=8.1",
+    "php": ">=8.2",
     "contributte/application": "^0.5.2 || ^0.6.0",
     "contributte/bootstrap": "^0.6.0",
     "contributte/di": "^0.5.6 || ^0.6.0",
