@@ -4,6 +4,7 @@ namespace Contributte\Nella\Boot\Preset;
 
 use Contributte\Bootstrap\ExtraConfigurator;
 use Contributte\Nella\DI\NellaExtension;
+use Nette\Bootstrap\Configurator;
 use Nette\DI\Compiler;
 
 class NellaPreset extends BasePreset
@@ -36,12 +37,13 @@ class NellaPreset extends BasePreset
 		$configurator->enableTracy($this->bootPoint . '/../var/log');
 
 		// extensions
-		$configurator->onCompile[] = static function (ExtraConfigurator $configurator, Compiler $compiler): void {
+		$configurator->onCompile[] = static function (Configurator $configurator, Compiler $compiler): void {
 			$compiler->addExtension('nella', new NellaExtension());
 		};
 
 		// environment variables
-		$configurator->onCompile[] = static function (ExtraConfigurator $configurator, Compiler $compiler): void {
+		$configurator->onCompile[] = static function (Configurator $configurator, Compiler $compiler): void {
+			assert($configurator instanceof ExtraConfigurator);
 			$compiler->addConfig(['parameters' => $configurator->getEnvironmentParameters()]);
 		};
 
