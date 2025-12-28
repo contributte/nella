@@ -23,7 +23,7 @@
     "contributte/di": "^0.5.6 || ^0.6.0",
     "contributte/latte": "^0.6.0",
     "contributte/tracy": "^0.6.0",
-    "contributte/utils": "^0.6.0",
+    "contributte/utils": "^0.7.0 || ^0.8.0",
     "contributte/forms": "^0.5.1 || ^0.6.0"
   },
   "require-dev": {
