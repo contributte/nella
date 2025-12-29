@@ -18,11 +18,11 @@
   ],
   "require": {
     "php": ">=8.2",
-    "contributte/application": "^0.5.2 || ^0.6.0",
-    "contributte/bootstrap": "^0.6.0",
-    "contributte/di": "^0.5.6 || ^0.6.0",
-    "contributte/latte": "^0.6.0",
-    "contributte/tracy": "^0.6.0",
+    "contributte/application": "^0.6.2 || ^0.7.0",
+    "contributte/bootstrap": "^0.6.0 || ^0.7.0",
+    "contributte/di": "^0.6.0 || ^0.7.0",
+    "contributte/latte": "^0.6.0 || ^0.7.0",
+    "contributte/tracy": "^0.6.0 || ^0.7.0",
     "contributte/utils": "^0.7.0 || ^0.8.0",
     "contributte/forms": "^0.5.1 || ^0.6.0"
   },
