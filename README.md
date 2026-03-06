@@ -2,7 +2,7 @@
 
 <p align=center>
   <a href="https://github.com/contributte/nella/actions"><img src="https://badgen.net/github/checks/contributte/nella/master?cache=300"></a>
-  <a href="https://coveralls.io/r/contributte/nella"> <img src="https://badgen.net/coveralls/c/github/contributte/nella?cache=300"> </a>
+  <a href="https://codecov.io/gh/contributte/nella"><img src="https://badgen.net/codecov/c/github/contributte/nella"></a>
   <a href="https://packagist.org/packages/contributte/nella"> <img src="https://badgen.net/packagist/dm/contributte/nella"> </a>
   <a href="https://packagist.org/packages/contributte/nella"> <img src="https://badgen.net/packagist/v/contributte/nella"> </a>
 </p>
