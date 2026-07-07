@@ -47,7 +47,7 @@ At this time it's suitable for smaller applications.
 
 2. Run your application via `php -S 0.0.0.0:8000 -t www` and open your browser at [localhost:8000](http://localhost:8000).
 
-3. Well, that's hard. Isn't it?
+3. That's all.
 
 ### Generator
 
@@ -136,7 +136,7 @@ There is example project [contributte/nella-skeleton](https://github.com/contrib
 
 See [how to contribute](https://contributte.org/contributing.html) to this package.
 
-This package is currently maintaining by these authors.
+This package is currently maintained by these authors.
 
 <a href="https://github.com/f3l1x">
   <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
